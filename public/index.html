@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <title>Landing Page</title>
+</head>
+<body class="bg-gray-900 text-gray-500">
+  <header class="z-10 sticky top-0 bg-gray-950">
+      <!-- <nav class=" w-9/12 flex flex-row mx-auto">
+        <div class="basis-1/4 uppercase text-lg">
+          <a href="#">
+            <span class="font-extrabold text-white">Bayu</span>
+            <span class="font-extralight text-blue-400">Krisna</span>
+          </a>
+        </div>
+        <div class="basis-1/2 md:flex space-x-2  md:justify-evenly hidden ">
+          <a href="#service">Service</a>
+          <a href="">Portfolios</a>
+          <a href="">Experience</a>
+          <a href="">Contact</a>
+        </div>
+        
+        <div class="basis-1/2 flex flex-row justify-end space-x-5">
+          <div>
+            <h1>p</h1>
+          </div>
+          <span class="hidden dark:inline end:0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><path fill="#324571" d="m15.844 3.344l-1.428.781l1.428.781l.781 1.428l.781-1.428l1.428-.781l-1.428-.781l-.781-1.428zm-5.432.814A8 8 0 1 0 18.93 16A9 9 0 0 1 10 7c0-.98.131-1.937.412-2.842M2 12C2 6.477 6.477 2 12 2h1.734l-.868 1.5C12.287 4.5 12 5.69 12 7a7 7 0 0 0 8.348 6.87l1.682-.327l-.543 1.626C20.162 19.137 16.417 22 12 22C6.477 22 2 17.523 2 12m18.5-5.584l.914 1.67l1.67.914l-1.67.914l-.914 1.67l-.914-1.67L17.916 9l1.67-.914z"/></svg>
+          </span>
+        </div>
+      </nav> -->
+      <nav class=" bg-gray-950">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex h-16 justify-between">
+            <div class="flex justify-between w-full">
+              <div class="py-5 uppercase text-lg">
+                <a href="#">
+                  <span class="font-extrabold text-white">Bayu</span>
+                  <span class="font-extralight text-blue-400">Krisna</span>
+                </a>
+              </div>
+              <div id="menu" class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                <!-- Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
+                <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-200 hover:border-gray-300 hover:text-gray-700">Dashboard</a>
+                <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-200 hover:border-gray-300 hover:text-gray-700">Team</a>
+                <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-200 hover:border-gray-300 hover:text-gray-700">Projects</a>
+                <a href="#" class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-200 hover:border-gray-300 hover:text-gray-700">Calendar</a>
+              </div>
+            </div>
+            <div class="-mr-2 flex items-center sm:hidden">
+              <!-- Mobile menu button -->
+              <button id="hamburger" type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open main menu</span>
+                <!--
+                  Icon when menu is closed.
+      
+                  Menu open: "hidden", Menu closed: "block"
+                -->
+                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <!--
+                  Icon when menu is open.
+      
+                  Menu open: "block", Menu closed: "hidden"
+                -->
+                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="hidden" id="mobile-menu">
+          <div class="space-y-1 pb-3 pt-2">
+            <!-- Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" -->
+            <a href="#" class="block border-l-4 border-indigo-500 bg-indigo-50 py-2 pl-3 pr-4 text-base font-medium text-indigo-700">Dashboard</a>
+            <a href="#" class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700">Team</a>
+            <a href="#" class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700">Projects</a>
+            <a href="#" class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700">Calendar</a>
+          </div>
+        </div>
+      </nav>
+      
+    </header>
+  <main class="relative -top-20">
+    <div class="bg-gray-950"> <!--hero-->
+      <div class="flex w-9/12 h-screen bg-slate-950 items-center mx-auto">
+        <div class="basis-1/2">
+          <h2 class="uppercase text-xs font-extralight tracking-ngangkang">My name Is</h2>
+          <h3 class="font-bold text-4xl text-white uppercase">
+            <span>Bayu</span>
+            <span class="text-blue-700">Krisna.</span>
+          </h3>
+          <p class="font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae doloribus non officiis saepe voluptates animi eos repudiandae blanditiis veniam consequuntur!</p>
+          <div class="flex flex-row mt-5 space-x-3">
+            <img class="w-6 h-6" src="img/github.svg" alt="">
+            <img class="w-6 h-6" src="img/linkedin.svg" alt="">
+            <img class="w-6 h-6" src="img/instagram.svg" alt="">
+          </div>
+        </div>
+        <div class="basis-1/2  sm:block lg:block hidden">
+          <img class="mx-auto max-h-96" src="img/hero.png" alt="sage">
+        </div>
+      </div>
+    </div>
+    <div id="service" class="bg-slate-50 py-20"> <!--Service-->
+      <div class="w-9/12 mx-auto">
+        <div class="flex flex-col place-items-center">
+          <div class="flex flex-col items-center">
+            <h2 class="uppercase font-extralight tracking-ngangkang">Services</h2>
+            <h1 class="text-3xl">Specialized in</h1>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-10 py-10 sm:grid-ro"> <!--Card-->
+          <div class="shadow-lg rounded-lg bg-white">
+            <div class="flex flex-col items-center p-5">
+              <div class="bg-blue-100 rounded-2xl h-10 w-10 items-center">
+                <img class="w-full" src="img/webdev.svg" alt="webdev" />
+              </div>
+              <h4 class="text-black mt-3">Web Developer</h4>
+              <p class="text-center font-extralight text-sm mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, sint!</p>
+            </div>
+          </div>
+          <div class="shadow-lg rounded-lg bg-white">
+            <div class="flex flex-col items-center p-5">
+              <div class="bg-blue-100 rounded-2xl h-10 w-10 items-center">
+                <img class="w-full" src="img/webdev.svg" alt="webdev" />
+              </div>
+              <h4 class="text-black mt-3">Web Developer</h4>
+              <p class="text-center font-extralight text-sm mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, sint!</p>
+            </div>
+          </div>
+          <div class="shadow-lg rounded-lg bg-white">
+            <div class="flex flex-col items-center p-5">
+              <div class="bg-blue-100 rounded-2xl h-10 w-10 items-center">
+                <img class="w-full" src="img/webdev.svg" alt="webdev" />
+              </div>
+              <h4 class="text-black mt-3">Web Developer</h4>
+              <p class="text-center font-extralight text-sm mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, sint!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+    </div>
+    <div id="experience" class="bg-gray-950 py-20"> <!-- Experience -->
+      <div class="w-9/12 sm:flex sm:flex-col mx-auto md:flex md:flex-row">
+        <div class="basis-1/3">
+          <div class="flex flex-col">
+            <div>
+              <h2 class="uppercase font-extralight tracking-ngangkang mb-5">experience</h2>
+            </div>
+            <div class="flex mb-5 flex-col gap-y-5 mt-5 pr-10">
+              <button onclick="telkom()" class="bg-white w-full p-4 rounded-lg flex justify-between hover:bg-blue-300 hover:text-blue-800" href=""><span>Telkom Indonesia</span> > </button>
+              <button onclick="bangkit()" class="bg-white w-full p-4 rounded-lg flex justify-between hover:bg-blue-300 hover:text-blue-800" href=""><span>Bangkit Academy</span> > </button>
+              <button onclick="braincore()" class="bg-white w-full p-4 rounded-lg flex justify-between hover:bg-blue-300 hover:text-blue-800" href=""><span>Braincore</span> > </button>
+            </div>
+          </div>
+        </div>
+        <div class="basis-2/3 md:pl-52 ">
+          <h4 id="title" class="font-bold text-gray-200 text-xl">Software Engineers Braincore.id</h4>
+          <h5 id="place" class="mb-3">Jakarta, Indonesia</h5>
+          <p id="time" class="text-gray-400">February 2024 - Present</p>
+          <div class="mt-2">
+            <span class="bg-yellow-500 text-black font-bold px-2 py-0.5 rounded-lg">Javascript</span>
+          </div>
+          <hr class="my-5">
+          <div >
+            <ul class="list-disc list-inside leading-8">
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis</li>
+              <li>Lorem ipsum dolor sit.</li>
+              <li>Lorem ipsum dolor sit amet consectetur.</li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="contact" class="bg-slate-50 py-20"><!-- Contact -->
+      <div class="text-center uppercase text-2xl font-bold">
+        <h2 class="text-gray-800">Contact <span class="text-blue-800">Me</span></h2>
+      </div>
+      
+      <div class="w-9/12 mx-auto flex justify-center mt-5">
+        <div class="">
+          <div class="mt-8 ">
+            <div class="flex flex-row gap-4">
+              <div class=" bg-blue-200 rounded-2xl p-2 h-10 w-10">
+                <img class="w-full" src="img/address.svg" alt="">
+              </div>
+              <div>
+                <h4>Address</h4>
+                <h5>Lorem ipsum dolor sit.</h5>
+              </div>
+            </div>
+            <div class="flex flex-row gap-4 mt-10">
+              <div class=" bg-blue-200 rounded-2xl p-2 h-10 w-10">
+                <img class="w-full" src="img/email.svg" alt="">
+              </div>
+              <div>
+                <h4>Email</h4>
+                <h5>Lorem ipsum dolor sit.</h5>
+              </div>
+            </div>
+            <div class="flex flex-row gap-4 mt-10">
+              <div class=" bg-blue-200 rounded-2xl p-2 h-10 w-10">
+                <img class="w-full" src="img/contact.svg" alt="">
+              </div>
+              <div>
+                <h4>Phone Number</h4>
+                <h5>Lorem ipsum dolor sit.</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </main>
+  <script>
+    function updateExperience(title, time) {
+    $("#title").html(title);
+    $("#time").html(time);
+  }
+
+  function telkom() {
+    updateExperience("Software Engineers at PT Telekomunikasi Indonesia", "Februari - March 2023");
+  }
+
+  function bangkit() {
+    updateExperience("Cohort Cloud Computing at Bangkit Academy", "August - December 2023");
+  }
+
+  function braincore() {
+    updateExperience("Software Engineers at Braincore.id", "Februari - Present 2024");
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerMenu = document.getElementById('hamburger');
+
+  hamburgerMenu.addEventListener('click', function() {
+    mobileMenu.classList.toggle('hidden');
+  });
+});
+  </script>
+</body>
+</html>
